@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>autoPlay</title>
+
+</head>
+<body>
+<div class="box">
+    <div class="wrapper">
+        <div class="show"><img src="forest.jpg" alt=""></div>
+        <div class="show"><img src="mountain.jpg" alt=""></div>
+        <div class="show"><img src="sea.jpg" alt=""></div>
+        <div class="show"><img src="water.jpeg" alt=""></div>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+</body>
+<script>
+    function onload() {
+        var wrapper = document.getElementsByClassName('wrapper')[0];
+        var show = document.getElementsByClassName('show');
+        var li = document.getElementsByTagName('li');
+        var index = 0;
+        var timer = null;
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+        timer = setInterval(autoPlay, 2000);
+
+        function autoPlay() {
+            index++;
+            if (index >= show.length) {
+                index = 0;
+            }
+            changeImg(index);
+        }
+
+        wrapper.onmouseover = function () {
+            clearInterval(timer);
+        }
+        wrapper.onmouseout = function () {
+            timer = setInterval(autoPlay, 2000);
+        }
+
+        function changeImg(curIndex) {
+            for (var i = 0; i < li.length; i++) {
+                li[i].className = '';
+            }
+            li[curIndex].className = 'on';
+            wrapper.style.marginTop = -355 * curIndex + 'px';
+            index = curIndex;
+        }
+
+        for (var j = 0; j < li.length; j++) {
+            li[j].id = j;
+            li[j].onmouseover = function () {
+                clearInterval(timer);
+                changeImg(this.id);
+            }
+        }
+    }
+
+    onload()
+</script>
+<style>
+    .box {
+        height: 350px;
+        width: 580px;
+        margin: 60px auto;
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    ul {
+        list-style: none;
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+
+    }
+
+    li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #f40;
+        text-align: center;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    .on {
+        background-color: #8F9E9E;
+        color: #000;
+    }
+
+    .wrapper .show img {
+        width: 580px;
+        height: 350px;
+    }
+
+</style>
+</html>

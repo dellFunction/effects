@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="stackone"><img src="./study/asset/ohSq-fypvuqe3435016.jpg" height="300" alt=""></div>
+</body>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: #ccd3d7;
+    }
+
+    .stackone {
+        border: 6px solid #fff;
+        /*float: left;*/
+        height: 300px;
+        width: 493px;
+        margin: 50px;
+        position: relative;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .stackone:before {
+        content: "";
+        height: 300px;
+        width: 493px;
+        background: #eff4de;
+        border: 6px solid #fff;
+
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        left: -10px;
+
+        -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+
+    .stackone:after {
+        content: "";
+        height: 300px;
+        width: 493px;
+        background: #768590;
+        border: 6px solid #fff;
+        position: absolute;
+        z-index: -1;
+        top: 5px;
+        left: 0px;
+        -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        -webkit-transform: rotate(4deg);
+        -moz-transform: rotate(4deg);
+        -o-transform: rotate(4deg);
+        -ms-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+</style>
+</html>
